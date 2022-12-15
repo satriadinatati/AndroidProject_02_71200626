@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val firestore = FirebaseFirestore.getInstance()
         val btnAdd = findViewById<Button>(R.id.btnAdd)
+
 
         btnAdd.setOnClickListener {
             val intent = Intent(this, AddNote::class.java)
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         }.addOnFailureListener {
             Log.d("test", "Pengambilan data gagal")
         }
+
+
 
     }
 }
